@@ -5,6 +5,7 @@ gem 'rack', '1.4.1'
 gem 'sqlite3'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
+gem 'pg'
 
 
 # Gems used only for assets and not required
@@ -51,6 +52,3 @@ gem 'refinerycms-i18n',   '~> 2.0.0'
 gem 'refinerycms-blog'
 gem 'refinerycms-articles', :path => 'vendor/extensions'
 gem "seed_dump"
-
-
-gem 'pg'
