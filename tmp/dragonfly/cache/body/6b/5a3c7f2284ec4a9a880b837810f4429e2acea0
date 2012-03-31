@@ -1,0 +1,12 @@
+#footer {
+  margin-bottom: 50px;
+  background: #9f0608;
+  height: 145px;
+  -webkit-border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
+  -moz-border-radius: 0 0 8px 8px;
+  box-shadow: -2px 0 0 #808080, 0 0px 0 #808080, 0 3px 0 #808080, 2px 0 0 #808080;
+  text-align: left;
+  padding: 13px;
+  font-size: 2;
+}

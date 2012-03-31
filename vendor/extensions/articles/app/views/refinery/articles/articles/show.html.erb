@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @article.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @article.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @article.photo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Blurb</h1>
+    <p>
+      <%=raw @article.blurb %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="articles">
+      <% @articles.each do |article| %>
+        <li>
+          <%= link_to article.title, refinery.articles_article_path(article) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Choice:</b>
+  <%= @booking.choice %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @booking.location %>
+</p>
+
+<p>
+  <b>Number weeks:</b>
+  <%= @booking.number_weeks %>
+</p>
+
+<p>
+  <b>Number adults:</b>
+  <%= @booking.number_adults %>
+</p>
+
+<p>
+  <b>Number children:</b>
+  <%= @booking.number_children %>
+</p>
+
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

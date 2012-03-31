@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  choice: MyString
+  location: MyString
+  number_weeks: MyString
+  number_adults: MyString
+  number_children: MyString
+
+two:
+  choice: MyString
+  location: MyString
+  number_weeks: MyString
+  number_adults: MyString
+  number_children: MyString

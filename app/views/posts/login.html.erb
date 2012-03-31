@@ -1,0 +1,65 @@
+<%= render '/refinery/html_tag' %>
+<%= render '/refinery/admin/head' %>
+<%= stylesheet_link_tag "login"  %>
+<body class='login <%= I18n.locale %>'>
+
+<div id="login">
+
+
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+
+      <div id='tooltip_container'><!--/div-->
+
+        <!--div class="span4"-->
+        <!--header>
+            <h1><!%= yield :header %></h1>
+        </header-->
+      </div>
+
+
+
+
+      <div id="yuan">
+        <b class="b1"></b><b class="b2 d1"></b><b class="b3 d1"></b><b class="b4 d1"></b>
+        <div id="bai"></div>
+      </div>
+
+
+      <h1>Hello! Please sign in</h1>
+
+      <!--div id="page_container"><div id="page"><div id="content" class="clearfix"><div id="flash_container"-->
+      <!--div class="span8"-->
+
+      <%= render '/refinery/message' %>
+      <%= yield %>
+    </div></div></div>
+
+
+
+
+
+
+
+<!--%= render '/refinery/html_tag' %>
+  <!%= render '/refinery/admin/head' %>
+  <body class='login < %= I18n.locale %>'>
+    <div id='tooltip_container'></div>
+    <header>
+      <h1><!%= yield :header %></h1>
+    </header>
+    <div id="page_container">
+      <div id="page">
+        <div id="content" class="clearfix">
+          <div id="flash_container">
+            <!%= render '/refinery/message' %>
+          </div>
+          <!%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+-->
+
+</body>

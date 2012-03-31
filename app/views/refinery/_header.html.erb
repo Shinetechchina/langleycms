@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "header" %>
+
+<h1 id='logo'>
+  <%= link_to Refinery::Core.site_name, refinery.root_path %>
+</h1>
+
+<a id="new-logo" href="./"><%= image_tag "logo.gif" %></a>
+
+<div id="nav-supp">
+  <ul>
+    <li><a href="/reseinformation/">Travel information</a></li>
+    <li><a href="/jobb/">Jobs / Careers</a></li>
+    <li><a href="/om-langley/">If Langley</a></li>
+    <li><a href="/kontakta-oss/">Contact us</a></li>
+  </ul>
+</div>
+
+<form class="well form-search">
+  <input type="text" class="input-medium search-query">
+  <button type="submit" class="btn">Search</button>
+</form>
+
+
+
+<%= render(:partial => "/refinery/menu", :locals => {
+        :dom_id => 'menu',
+        :css => 'menu'
+}) %>

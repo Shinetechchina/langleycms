@@ -1,0 +1,89 @@
+<% stylesheet_link_tag "home" %>
+
+<div class="left_content " xmlns="http://www.w3.org/1999/html" style="display: none">
+  <div class="left_check">
+
+
+
+
+    <form class="well" method="get" action="./bookings/create" target="_blank">
+      <i class="icon-arrow-down"></i> Check price & book<br><br>
+
+      <input type="radio" value="Sol-Sommar" name="book_type" checked="checked">Sun - Summer<br>
+      <input type="radio" value="Sol-Vinter" name="book_type">Sun - Winter<br>
+      <input type="radio" value="Skidresor" name="book_type">Ski holiday<br>
+
+      Number of weeks | Number of adults:
+      <br>
+      <select name="weeks">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+      　　　
+      <select name="adults">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+      <br>
+
+      Children: 0-12 years (For Guadeloupe for 0-15 years)
+
+      <select name="children">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+      <br>
+      <input id="book_confirm" type="submit" value="search">
+
+
+    </form>
+
+
+    < %= image_tag "faq-SE.gif" %>
+
+  </div>
+</div>
+
+
+<div class="right_content" style="display: none">
+  <div class="right_top">
+    < %= image_tag "sommar_674x315_header2.jpg" %>
+  </div>
+  <div class="right_middle">
+
+    <div class="right_middle_bar">
+      right_middle_bar
+    </div>
+
+    <div>
+      <div class="right_middle_box box_first">< %= image_tag "tennis_188x137.jpg" %></div>
+      <div class="right_middle_box box_second">< %= image_tag "puff_188x137.jpg" %> </div>
+      <div class="right_middle_box box_last">< %= image_tag "langleystories_188x137.jpg" %></div>
+    </div>
+
+    <div class="right_bottom">
+      <div class="img_text">< %= image_tag "nyhetsbrev_2010.gif" %></div>
+      <div class="photos">photos</div>
+    </div>
+  </div>
+
+
+  <div class="foot_arrow">
+    You are here: Start
+  </div>
+
+</div>

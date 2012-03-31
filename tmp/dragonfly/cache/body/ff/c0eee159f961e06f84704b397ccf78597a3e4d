@@ -1,0 +1,89 @@
+.main_content {
+  width: 892px;
+}
+.main_content .left_content {
+  margin-top: 20px;
+  float: left;
+}
+.main_content .left_content .left_check {
+  font-size: 80%;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  width: 210px;
+  height: 395px;
+  background-color: #ffffff;
+  box-shadow: -2px 0 0 #ddcccc, 0 -2px 0 #ddcccc, 0 2px 0 #ddcccc, 2px 0 0 #ddcccc;
+}
+.main_content .left_content .left_check label {
+  font-size: 80%;
+}
+.main_content .left_content .left_check img {
+  margin-bottom: 0px;
+}
+.main_content .left_content .left_check form {
+  text-align: left;
+}
+.main_content .right_content {
+  margin-left: 20px;
+  width: 662px;
+  height: 882px;
+  margin-top: 20px;
+  float: left;
+}
+.main_content .right_content .right_top {
+  height: 315px;
+}
+.main_content .right_content .right_middle_bar {
+  margin-top: 15px;
+  height: 36px;
+  background-color: white;
+  box-shadow: -2px 0 0 #ddcccc, 0 -2px 0 #ddcccc, 0 2px 0 #ddcccc, 2px 0 0 #ddcccc;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+.main_content .right_content .right_middle_box {
+  box-shadow: -2px 0 0 #ddcccc, 0 -2px 0 #ddcccc, 0 2px 0 #ddcccc, 2px 0 0 #ddcccc;
+  width: 205px;
+  height: 243px;
+  float: left;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+.main_content .right_content .box_first {
+  margin-right: 22px;
+}
+.main_content .right_content .box_second {
+  margin-right: 22px;
+}
+.main_content .right_content .img_text {
+  float: left;
+  margin-right: 20px;
+}
+.main_content .right_content .photos {
+  width: 432px;
+  height: 224px;
+  background: pink;
+  float: left;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+@font-face {
+  font-family: 'MuseoSlab100Italic';
+  src: url('Museo_Slab_100italic-webfont.eot');
+  src: url('Museo_Slab_100italic-webfont.eot?#iefix') format('embedded-opentype'), url('Museo_Slab_100italic-webfont.woff') format('woff'), url('Museo_Slab_100italic-webfont.ttf') format('truetype'), url('Museo_Slab_100italic-webfont.svg#MuseoSlab100Italic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+select {
+  width: 100px;
+  height: 25px;
+}
+select .span2 {
+  width: 80px;
+}
