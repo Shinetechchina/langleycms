@@ -1,4 +1,11 @@
+<script language="javascript" type="text/javascript">
+    var rootURL = window.location.protocol + "//" + window.location.host+ "/";
+    if(rootURL == document.location.href){
+        location.href='/start';
+    }
+    //if directory is root directory, redirect /start directory
 
+</script>
 <!--<div id="booking">-->
   <!--<p id="book_type" name= < %= $book_type.to_s %>></p>-->
   <!--<p id="weeks" name= < %= $weeks.to_s %>></p>-->
