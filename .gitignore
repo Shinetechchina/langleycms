@@ -19,6 +19,7 @@ db/production.sqlite3
 *.log
 tmp
 tmp/**/*
+tmp/
 
 # Documentation
 doc/api
