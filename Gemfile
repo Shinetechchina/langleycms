@@ -17,6 +17,7 @@ group :assets do
   gem 'less', '2.0.9'
   gem 'less-rails', '2.1.6'
   gem 'twitter-bootstrap-rails'
+  gem "compass-jquery-plugin", "~> 0.3.3.1"
 end
 
 group :development do

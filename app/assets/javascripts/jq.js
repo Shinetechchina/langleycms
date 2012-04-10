@@ -54,17 +54,17 @@ $(document).ready(function(){
     $("#child").val(children);
 
 
-    $.ajax({
-       type: "get",
-        url: "../articles/1",
-        dataType: "json",
-        success:function(json){
-            alert("n")
-            alert(json["id"])
-
-        }
-
-    });
+//    $.ajax({
+//       type: "get",
+//        url: "../articles/1",
+//        dataType: "json",
+//        success:function(json){
+//            alert("n")
+//            alert(json["id"])
+//
+//        }
+//
+//    });
 });
 
 
