@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328065624) do
+ActiveRecord::Schema.define(:version => 20120411061816) do
 
   create_table "bookings", :force => true do |t|
     t.string   "choice"
@@ -21,6 +21,37 @@ ActiveRecord::Schema.define(:version => 20120328065624) do
     t.string   "number_children"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "business_days", :force => true do |t|
+    t.date     "start_day"
+    t.date     "end_day"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "customs", :force => true do |t|
+    t.integer  "number_of_adults"
+    t.integer  "number_of_children"
+    t.string   "Email"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "hotels", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "person", :force => true do |t|
+    t.string   "first_name"
+    t.string   "family_name"
+    t.boolean  "is_child"
+    t.integer  "age"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "post_tests", :force => true do |t|
@@ -236,6 +267,22 @@ ActiveRecord::Schema.define(:version => 20120328065624) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
+  create_table "room_types", :force => true do |t|
+    t.integer  "nuber_of_people"
+    t.decimal  "price"
+    t.string   "level"
+    t.text     "description"
+    t.integer  "have_num"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "rooms", :force => true do |t|
+    t.integer  "room_num"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "seo_meta", :force => true do |t|
     t.integer  "seo_meta_id"
     t.string   "seo_meta_type"
@@ -271,6 +318,12 @@ ActiveRecord::Schema.define(:version => 20120328065624) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "trips", :force => true do |t|
+    t.string   "trip_have_num"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

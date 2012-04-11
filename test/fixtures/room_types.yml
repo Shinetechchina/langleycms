@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nuber_of_people: 1
+  price: 9.99
+  level: MyString
+  description: MyText
+  have_num: 1
+
+two:
+  nuber_of_people: 1
+  price: 9.99
+  level: MyString
+  description: MyText
+  have_num: 1
