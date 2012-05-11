@@ -39,18 +39,8 @@ end
 
 gem 'jquery-rails'
 
-# Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
-
-# Specify additional Refinery CMS Extensions here (all optional):
+gem 'jquery-rails'
+gem 'refinerycms'
 gem 'refinerycms-i18n',   '~> 2.0.0'
-#  gem 'refinerycms-blog', '~> 2.0.0'
-#  gem 'refinerycms-inquiries', '~> 2.0.0'
-#  gem 'refinerycms-search', '~> 2.0.0'
-#  gem 'refinerycms-page-images', '~> 2.0.0'
-gem 'refinerycms-blog'
-gem 'refinerycms-articles', :path => 'vendor/extensions'
-gem "seed_dump"
-
-
-gem 'pg'
+gem 'refinerycms-search', '~> 2.0.0', :git => 'git://github.com/resolve/refinerycms-search.git', :branch => '2-0-stable'
+gem 'refinerycms-hotels', :path => 'vendor/extensions'

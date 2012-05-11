@@ -1,1 +1,23 @@
-<% stylesheet_link_tag "minute" %>
+<%= stylesheet_link_tag "minute" %>
+
+
+<div id="minute">
+  <h1>Last Minute</h1>
+
+
+  <ul class="nav nav-tabs" id="tab">
+    <li class="active"><a href="#season-s" data-toggle="tab">Sun - Summer</a></li>
+    <li><a href="#season-w" data-toggle="tab">Sun - winter</a></li>
+    <li><a href="#season-t" data-toggle="tab">Business Travel</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="season-s"><%= render "minute_summer" %></div>
+    <div class="tab-pane" id="season-w"><%= render "minute_winter" %></div>
+    <div class="tab-pane" id="season-t"><%= render "minute_travel" %></div>
+  </div>
+
+
+</div>
+
+<%= javascript_include_tag "bootstrap" %>

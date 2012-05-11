@@ -7,7 +7,7 @@
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
 -%>
 <nav id='<%= dom_id %>' class='<%= css %>'>
-  <ul class="nav nav-tabs">
+  <ul id="main-menu">
   <!--class of ul changed into nav nav-tabs-->
     <%= render :partial => '/refinery/menu_branch', :collection => roots,
                :locals => {
@@ -19,3 +19,6 @@
   </ul>
 </nav>
 <% end -%>
+
+<%= javascript_include_tag "application" %>
+
