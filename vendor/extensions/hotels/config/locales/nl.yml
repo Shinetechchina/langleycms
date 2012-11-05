@@ -1,0 +1,59 @@
+nl:
+  refinery:
+    plugins:
+      room_types:
+        title: Room Types
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        room_types:
+          actions:
+            create_new: Maak een nieuwe Room Type
+            reorder: Wijzig de volgorde van de Room Types
+            reorder_done: Klaar met het wijzingen van de volgorde van de Room Types
+          records:
+            title: Room Types
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Room Types. Druk op 'Maak een nieuwe Room
+              Type' om de eerste aan te maken.
+          room_type:
+            view_live_html: Bekijk deze room type op de website <br/><em>(opent een
+              nieuw venster)</em>
+            edit: Bewerk deze room type
+            delete: Verwijder deze room type voor eeuwig
+        hotels:
+          actions:
+            create_new: Maak een nieuwe Hotel
+            reorder: Wijzig de volgorde van de Hotels
+            reorder_done: Klaar met het wijzingen van de volgorde van de Hotels
+          records:
+            title: Hotels
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Hotels. Druk op 'Maak een nieuwe Hotel'
+              om de eerste aan te maken.
+          hotel:
+            view_live_html: Bekijk deze hotel op de website <br/><em>(opent een nieuw
+              venster)</em>
+            edit: Bewerk deze hotel
+            delete: Verwijder deze hotel voor eeuwig
+      room_types:
+        show:
+          other: Andere Room Types
+      hotels:
+        show:
+          other: Andere Hotels
+  activerecord:
+    attributes:
+      refinery/hotels/room_type:
+        name: Name
+        contain_num: Contain Num
+        price: Price
+        level: Level
+        left_roomes: Left Roomes
+        sum_rooms: Sum Rooms
+        description: Description
+      refinery/hotels/hotel:
+        name: Name
+        location: Location
+        description: Description

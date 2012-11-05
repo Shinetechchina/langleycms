@@ -1,0 +1,40 @@
+
+
+
+
+<!--< % content_for :body_content_left do %>-->
+  <!--<ul id="hotels">-->
+    <!--< % @hotels.each do |hotel| %>-->
+      <!--<li>-->
+        <!--< %= link_to hotel.name, refinery.hotels_hotel_path(hotel) %>-->
+      <!--</li>-->
+    <!--< % end %>-->
+  <!--</ul>-->
+<!--< % end %>-->
+
+<!-- %= render @hotel.room_types %-->
+
+<%= stylesheet_link_tag "minute" %>
+
+
+<div id="minute">
+  <h1>Last Minute</h1>
+
+  <ul class="nav nav-tabs" id="tab">
+    <li class="active"><a href="#season-s" data-toggle="tab">Sun - Summer</a></li>
+    <li><a href="#season-w" data-toggle="tab">Sun - winter</a></li>
+    <li><a href="#season-t" data-toggle="tab">Business Travel</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="season-s"><%= render "minute_summer" %></div>
+    <div class="tab-pane" id="season-w"><%= render "minute_winter" %></div>
+    <div class="tab-pane" id="season-t"><%= render "minute_travel" %></div>
+  </div>
+
+
+</div>
+
+<%= javascript_include_tag "bootstrap" %>
+
+

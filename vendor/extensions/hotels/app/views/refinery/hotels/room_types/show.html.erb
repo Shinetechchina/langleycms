@@ -1,0 +1,67 @@
+<% content_for :body_content_title do %>
+  <%= @room_type.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Hotel Name</h1>
+    <p>
+      <%=raw @room_type.hotel.name %>
+    </p>
+    <h1>Room Type Name</h1>
+    <p>
+      <%=raw @room_type.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Contain Num</h1>
+    <p>
+      <%=raw @room_type.contain_num %>
+    </p>
+  </section>
+  <section>
+    <h1>Price</h1>
+    <p>
+      <%=raw @room_type.price %>
+    </p>
+  </section>
+  <section>
+    <h1>Level</h1>
+    <p>
+      <%=raw @room_type.level %>
+    </p>
+  </section>
+  <section>
+    <h1>Left Rooms</h1>
+    <p>
+      <%=raw @room_type.left_rooms %>
+    </p>
+  </section>
+  <section>
+    <h1>Sum Rooms</h1>
+    <p>
+      <%=raw @room_type.sum_rooms %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @room_type.description %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="room_types">
+      <% @room_types.each do |room_type| %>
+        <li>
+          <%= link_to room_type.name, refinery.hotels_room_type_path(room_type) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

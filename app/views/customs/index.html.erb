@@ -1,0 +1,27 @@
+<h1>Listing customs</h1>
+
+<table>
+  <tr>
+    <th>Number of people</th>
+    <th>Number of children</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customs.each do |custom| %>
+  <tr>
+    <td><%= custom.number_of_people %></td>
+    <td><%= custom.number_of_children %></td>
+    <td><%= custom.email %></td>
+    <td><%= link_to 'Show', custom %></td>
+    <td><%= link_to 'Edit', edit_custom_path(custom) %></td>
+    <td><%= link_to 'Destroy', custom, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Custom', new_custom_path %>

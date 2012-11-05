@@ -1,0 +1,79 @@
+<%= form_for [refinery, :hotels_admin, @room_type] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @room_type,
+              :include_object_name => true %>
+
+  <div class='field'>
+      <%= f.label "Hotel id" -%>
+      <%= f.number_field :hotel_id -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contain_num -%>
+    <%= f.number_field :contain_num  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :price -%>
+    <%= f.text_field :price  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :level -%>
+    <%= f.text_field :level  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :left_rooms -%>
+    <%= f.number_field :left_rooms  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :sum_rooms -%>
+    <%= f.number_field :sum_rooms  -%>
+
+  </div>
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:description].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/hotels/room_type", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:description].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.room_types.admin.room_types.room_type'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @room_type.name) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

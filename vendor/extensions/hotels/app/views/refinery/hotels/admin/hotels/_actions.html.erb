@@ -1,0 +1,46 @@
+<ul>
+  <% if ::Refinery::Hotels::Admin::HotelsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.hotels_admin_hotels_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_hotels_admin_hotel_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Hotels::Admin::HotelsController.sortable? && ::Refinery::Hotels::Hotel.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Hotels"),
+                 refinery.hotels_admin_hotels_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Hotels"),
+                 refinery.hotels_admin_hotels_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
+<ul>
+  <li>
+    <%= link_to t('.Add_New Room Type'), refinery.new_hotels_admin_room_type_path,
+                :class => "add_icon" %>
+  </li>
+  <% if !searching? && ::Refinery::Hotels::Admin::RoomTypesController.sortable? && ::Refinery::Hotels::RoomType.any? %>
+      <li>
+        <%= link_to t('.reorder', :what => "Room Types"),
+                    refinery.hotels_admin_room_types_path,
+                    :id => "reorder_action",
+                    :class => "reorder_icon" %>
+
+        <%= link_to t('.reorder_done', :what => "Room Types"),
+                    refinery.hotels_admin_room_types_path,
+                    :id => "reorder_action_done",
+                    :style => "display: none;",
+                    :class => "reorder_icon" %>
+      </li>
+  <% end %>
+</ul>
+

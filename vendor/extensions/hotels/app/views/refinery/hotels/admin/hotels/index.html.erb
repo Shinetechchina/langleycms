@@ -1,0 +1,10 @@
+<%= render :partial => 'submenu' %>
+<section id='records'>
+  <%= render 'records' %>
+</section>
+<aside id='actions'>
+  <%= render 'actions' %>
+</aside>
+<%= render '/refinery/admin/make_sortable', :tree => false if !searching? and ::Refinery::Hotels::Admin::HotelsController.sortable? and ::Refinery::Hotels::Hotel.count > 1 %>
+
+

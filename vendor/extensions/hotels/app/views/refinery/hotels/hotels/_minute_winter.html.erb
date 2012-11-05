@@ -1,0 +1,104 @@
+<% stylesheet_link_tag "minute" %>
+<div>
+This list last updated: <%= current_time_helper %>
+
+<br /><br />
+<div id="season-b-form">
+
+<form method="get" action="./hotels/">
+
+    <div class="minute-check">
+      Destination　　　
+      Departing from　　
+      Number of weeks　
+      Adults　　
+      Sort the list
+      <br />
+      <select>
+        <option value="All destinations">All destinations</option>
+        <option value="CHAMONIX">CHAMONIX</option>
+        <option value="GUADELOUPE">GUADELOUPE</option>
+      </select>
+
+      <select>
+        <option value="Stockholm">Stockholm</option>
+        <option value="goteborg">goteborg</option>
+      </select>
+      　
+      <select>
+        <option value="1 week">1 week</option>
+        <option value="2 weeks">2 weeks</option>
+      </select>
+
+      <select class="span1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+
+
+      <select class="span2" onchange="reDir(this.selectedIndex)">
+        <option value="Departure Date">Departure Date</option>
+        <option value="Price">Price</option>
+        <option value="Name of Hotel">Name of Hotel</option>
+      </select>
+    </div>
+
+
+    <table>
+      <thead>
+      <tr><th>Departure</th>
+        <th>Destination</th>
+        <th>Hotels</th>
+        <th>Type</th>
+        <th>Number of days</th>
+        <th>Price (USD)</th>
+        <th>Book</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+
+      <% @room_types.each do |room_type| %>
+      <tr>
+        <td><%= room_type.hotel.location %></td>
+        <td class="hotel"><a href="#"><%= room_type.hotel.name %></a></td>
+        <td>room for up to <%= room_type.contain_num %> people</td>
+        <td><%= room_type.name %></td>
+        <td>1</td>
+        <td><%= room_type.price %></td>
+        <td><div id="sub"><input type="submit" /></div>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+</form>
+</div>
+</div>
+
+<script>
+    function reDir(oInput)
+    {
+        switch (oInput)
+        {
+            case 0 :
+                window.location = "/hotels/sort/Departure Date";
+                break;
+            case 1 :
+                window.location = "/hotels/sort/price";
+                break;
+            case 2 :
+                window.location = "/hotels/sort/hotel_id";
+                break;
+        }
+    }
+</script>
+
+

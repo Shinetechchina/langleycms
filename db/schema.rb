@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120411061816) do
+ActiveRecord::Schema.define(:version => 20120420081516) do
 
   create_table "bookings", :force => true do |t|
     t.string   "choice"
@@ -24,31 +24,24 @@ ActiveRecord::Schema.define(:version => 20120411061816) do
   end
 
   create_table "business_days", :force => true do |t|
-    t.date     "start_day"
-    t.date     "end_day"
+    t.date     "start_day",  :null => false
+    t.date     "end_day",    :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "customs", :force => true do |t|
-    t.integer  "number_of_adults"
+    t.integer  "number_of_adults",   :null => false
     t.integer  "number_of_children"
     t.string   "Email"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
 
-  create_table "hotels", :force => true do |t|
-    t.string   "name"
-    t.string   "location"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "person", :force => true do |t|
-    t.string   "first_name"
-    t.string   "family_name"
-    t.boolean  "is_child"
+    t.string   "first_name",  :null => false
+    t.string   "family_name", :null => false
+    t.boolean  "is_child",    :null => false
     t.integer  "age"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -70,66 +63,28 @@ ActiveRecord::Schema.define(:version => 20120411061816) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "refinery_articles", :force => true do |t|
-    t.string   "title"
-    t.integer  "photo_id"
-    t.text     "blurb"
+  create_table "refinery_hotels", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "description"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "refinery_blog_categories", :force => true do |t|
-    t.string   "title"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "cached_slug"
-    t.string   "slug"
   end
 
-  add_index "refinery_blog_categories", ["id"], :name => "index_refinery_blog_categories_on_id"
-  add_index "refinery_blog_categories", ["slug"], :name => "index_refinery_blog_categories_on_slug"
-
-  create_table "refinery_blog_categories_blog_posts", :force => true do |t|
-    t.integer "blog_category_id"
-    t.integer "blog_post_id"
-  end
-
-  add_index "refinery_blog_categories_blog_posts", ["blog_category_id", "blog_post_id"], :name => "index_blog_categories_blog_posts_on_bc_and_bp"
-
-  create_table "refinery_blog_comments", :force => true do |t|
-    t.integer  "blog_post_id"
-    t.boolean  "spam"
+  create_table "refinery_hotels_room_types", :force => true do |t|
+    t.integer  "hotel_id"
     t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.string   "state"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "contain_num"
+    t.decimal  "price",       :precision => 8, :scale => 2, :default => 0.0
+    t.string   "level"
+    t.integer  "left_rooms"
+    t.integer  "sum_rooms"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
   end
-
-  add_index "refinery_blog_comments", ["id"], :name => "index_refinery_blog_comments_on_id"
-
-  create_table "refinery_blog_posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.boolean  "draft"
-    t.datetime "published_at"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.integer  "user_id"
-    t.string   "cached_slug"
-    t.string   "custom_url"
-    t.text     "custom_teaser"
-    t.string   "source_url"
-    t.string   "source_url_title"
-    t.integer  "access_count",     :default => 0
-    t.string   "slug"
-  end
-
-  add_index "refinery_blog_posts", ["access_count"], :name => "index_refinery_blog_posts_on_access_count"
-  add_index "refinery_blog_posts", ["id"], :name => "index_refinery_blog_posts_on_id"
-  add_index "refinery_blog_posts", ["slug"], :name => "index_refinery_blog_posts_on_slug"
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -267,18 +222,8 @@ ActiveRecord::Schema.define(:version => 20120411061816) do
 
   add_index "refinery_users", ["id"], :name => "index_refinery_users_on_id"
 
-  create_table "room_types", :force => true do |t|
-    t.integer  "nuber_of_people"
-    t.decimal  "price"
-    t.string   "level"
-    t.text     "description"
-    t.integer  "have_num"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
   create_table "rooms", :force => true do |t|
-    t.integer  "room_num"
+    t.integer  "room_num",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -318,12 +263,6 @@ ActiveRecord::Schema.define(:version => 20120411061816) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "trips", :force => true do |t|
-    t.string   "trip_have_num"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
   end
 
 end

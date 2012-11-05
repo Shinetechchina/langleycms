@@ -1,0 +1,17 @@
+<%=raw t('.greeting') %>,
+
+<%=raw t('.you_recieved_new_comment') %>
+
+<%=raw t('.comment_starts') %>
+
+<%=raw t('.from') %>: <%= @comment.name %>
+<%=raw t('.email') %>: <%= @comment.email %>
+<%=raw t('.message') %>:
+<%=simple_format strip_tags(@comment.body) %>
+
+<%=raw t('.comment_ends') %>
+
+<%=raw t('.closing_line') %>,
+<%=raw Refinery::Core.site_name %>
+
+<%=raw t('.ps') %>

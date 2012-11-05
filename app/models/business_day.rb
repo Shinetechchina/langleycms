@@ -4,5 +4,4 @@ class BusinessDay < ActiveRecord::Base
   validates :start_day, :presence => true
   validates :end_day,   :presence => true
 
-
 end

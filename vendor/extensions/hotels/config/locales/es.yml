@@ -1,0 +1,59 @@
+es:
+  refinery:
+    plugins:
+      room_types:
+        title: Room Types
+      hotels:
+        title: Hotels
+    hotels:
+      admin:
+        room_types:
+          actions:
+            create_new: Crear nuevo room type
+            reorder: Reordenar room types
+            reorder_done: Reordenación de room types completada
+          records:
+            title: Room Types
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay room types todavía. Pulsa en "Crear nuevo Room Type"
+              para crear tu primer room type.
+          room_type:
+            view_live_html: Ver este room type como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este room type
+            delete: Borrar este room type para siempre
+        hotels:
+          actions:
+            create_new: Crear nuevo hotel
+            reorder: Reordenar hotels
+            reorder_done: Reordenación de hotels completada
+          records:
+            title: Hotels
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay hotels todavía. Pulsa en "Crear nuevo Hotel" para
+              crear tu primer hotel.
+          hotel:
+            view_live_html: Ver este hotel como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este hotel
+            delete: Borrar este hotel para siempre
+      room_types:
+        show:
+          other: Otros room types
+      hotels:
+        show:
+          other: Otros hotels
+  activerecord:
+    attributes:
+      refinery/hotels/room_type:
+        name: Name
+        contain_num: Contain Num
+        price: Price
+        level: Level
+        left_roomes: Left Roomes
+        sum_rooms: Sum Rooms
+        description: Description
+      refinery/hotels/hotel:
+        name: Name
+        location: Location
+        description: Description

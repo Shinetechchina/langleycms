@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  number_of_adults: 
-  number_of_children: 
-  Email: MyString
+  number_of_people: 1
+  number_of_children: 1
+  email: MyString
 
 two:
-  number_of_adults: 
-  number_of_children: 
-  Email: MyString
+  number_of_people: 1
+  number_of_children: 1
+  email: MyString

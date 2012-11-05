@@ -2,12 +2,12 @@
 
 one:
   first_name: MyString
-  family_name: MyString
+  last_name: MyString
   is_child: false
-  age: 
+  age: 1
 
 two:
   first_name: MyString
-  family_name: MyString
+  last_name: MyString
   is_child: false
-  age: 
+  age: 1

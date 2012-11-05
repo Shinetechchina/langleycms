@@ -1,0 +1,48 @@
+<% content_for :body_content_title do %>
+  <%= @hotel.name %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h2>Name</h2>
+    <p>
+      <%=raw @hotel.name %>
+    </p>
+  </section>
+  <section>
+    <h2>Location</h2>
+    <p>
+      <%=raw @hotel.location %>
+    </p>
+  </section>
+  <section>
+    <h2>Description</h2>
+    <p>
+      <%=raw @hotel.description %>
+    </p>
+  </section>
+    <% @special_hotel_room_types.each do |room_type| %>
+        <h4>name:<%= raw room_type.name %></h4>
+        <h4>contain number:<%= raw room_type.contain_num %></h4>
+        <h4>price:<%= raw room_type.price %> $</h4>
+        <h4>left roomes:<%= raw room_type.left_rooms %></h4>
+        <br>
+    <% end %>
+<% end %>
+
+
+<!-- % content_for :body_content_right do %>
+
+  <!--<aside>-->
+    <!--<h3>< %= t('.other') %></h3>-->
+    <!--<ul id="hotels">-->
+      <!--< % @hotels.each do |hotel| %>-->
+        <!--<li>-->
+          <!--< %= link_to hotel.name, refinery.hotels_hotel_path(hotel) %>-->
+        <!--</li>-->
+      <!--< % end %>-->
+    <!--</ul>-->
+  <!--</aside>-->
+<!--< % end %>-->
+
+<!-- %= render '/refinery/content_page' %-->

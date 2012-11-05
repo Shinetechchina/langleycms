@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start day:</b>
+  <%= @business_day.start_day %>
+</p>
+
+<p>
+  <b>End day:</b>
+  <%= @business_day.end_day %>
+</p>
+
+
+<%= link_to 'Edit', edit_business_day_path(@business_day) %> |
+<%= link_to 'Back', business_days_path %>

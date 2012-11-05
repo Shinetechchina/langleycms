@@ -2,7 +2,7 @@
 class CreateBlogStructure < ActiveRecord::Migration
 
   def up
-    create_table Refinery::Blog::Post.table_name, :id => true do |t|
+    create_table Refinery::Blog::Post.table_name, :id => true, :force => true  do |t|
       t.string :title
       t.text :body
       t.boolean :draft
@@ -12,7 +12,7 @@ class CreateBlogStructure < ActiveRecord::Migration
 
     add_index Refinery::Blog::Post.table_name, :id
 
-    create_table Refinery::Blog::Comment.table_name, :id => true do |t|
+    create_table Refinery::Blog::Comment.table_name, :id => true, :force => true do |t|
       t.integer :blog_post_id
       t.boolean :spam
       t.string :name
@@ -24,14 +24,14 @@ class CreateBlogStructure < ActiveRecord::Migration
 
     add_index Refinery::Blog::Comment.table_name, :id
 
-    create_table Refinery::Blog::Category.table_name, :id => true do |t|
+    create_table Refinery::Blog::Category.table_name, :id => true, :force => true  do |t|
       t.string :title
       t.timestamps
     end
 
     add_index Refinery::Blog::Category.table_name, :id
 
-    create_table Refinery::Categorization.table_name, :id => true do |t|
+    create_table Refinery::Categorization.table_name, :id => true, :force => true  do |t|
       t.integer :blog_category_id
       t.integer :blog_post_id
     end

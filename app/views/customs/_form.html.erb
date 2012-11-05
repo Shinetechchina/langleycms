@@ -1,0 +1,29 @@
+<%= form_for(@custom) do |f| %>
+  <% if @custom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@custom.errors.count, "error") %> prohibited this custom from being saved:</h2>
+
+      <ul>
+      <% @custom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number_of_people %><br />
+    <%= f.number_field :number_of_people %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_children %><br />
+    <%= f.number_field :number_of_children %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

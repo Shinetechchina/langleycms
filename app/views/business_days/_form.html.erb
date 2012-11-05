@@ -1,0 +1,25 @@
+<%= form_for(@business_day) do |f| %>
+  <% if @business_day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business_day.errors.count, "error") %> prohibited this business_day from being saved:</h2>
+
+      <ul>
+      <% @business_day.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_day %><br />
+    <%= f.date_select :start_day %>
+  </div>
+  <div class="field">
+    <%= f.label :end_day %><br />
+    <%= f.date_select :end_day %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
