@@ -31,3 +31,6 @@ Test.create([
 ])
 
 
+
+# Added by Refinery CMS Stores extension
+Refinery::Stores::Engine.load_seed

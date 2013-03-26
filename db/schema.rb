@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328065624) do
+ActiveRecord::Schema.define(:version => 20130326010507) do
 
   create_table "bookings", :force => true do |t|
     t.string   "choice"
@@ -173,6 +173,38 @@ ActiveRecord::Schema.define(:version => 20120328065624) do
   add_index "refinery_pages", ["lft"], :name => "index_refinery_pages_on_lft"
   add_index "refinery_pages", ["parent_id"], :name => "index_refinery_pages_on_parent_id"
   add_index "refinery_pages", ["rgt"], :name => "index_refinery_pages_on_rgt"
+
+  create_table "refinery_product_categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_product_translations", :force => true do |t|
+    t.integer  "refinery_product_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "refinery_product_translations", ["locale"], :name => "index_refinery_product_translations_on_locale"
+  add_index "refinery_product_translations", ["refinery_product_id"], :name => "index_37efedab7e21e7c5cb33bc245a27e4751bfb25ea"
+
+  create_table "refinery_products", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "image_id"
+    t.integer  "category_id"
+    t.datetime "available_on"
+    t.integer  "count_on_hand"
+    t.string   "permalink"
+    t.string   "meta_description"
+    t.datetime "deleted_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "refinery_resources", :force => true do |t|
     t.string   "file_mime_type"

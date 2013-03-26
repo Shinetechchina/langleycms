@@ -31,6 +31,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'rb-readline'
   gem 'rspec', '~>2.8.0'
   gem 'rspec-rails', '~>2.8.0'
   gem 'watchr'
@@ -50,6 +51,7 @@ gem 'refinerycms-i18n',   '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 gem 'refinerycms-blog'
 gem 'refinerycms-articles', :path => 'vendor/extensions'
+gem 'refinerycms-stores', :git => 'git@github.com:marshluca/refinerycms-stores.git'
 gem "seed_dump"
 
 
