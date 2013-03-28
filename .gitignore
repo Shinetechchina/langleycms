@@ -13,8 +13,7 @@
 /tmp
 # Rails
 .bundle
-db/test.sqlite3
-db/production.sqlite3
+db/*.sqlite3
 
 *.log
 tmp
