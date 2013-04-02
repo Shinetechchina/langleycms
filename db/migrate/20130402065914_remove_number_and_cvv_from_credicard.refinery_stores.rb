@@ -1,0 +1,13 @@
+# This migration comes from refinery_stores (originally 20130328032421)
+# This migration comes from spree (originally 20101028151745)
+class RemoveNumberAndCvvFromCredicard < ActiveRecord::Migration
+  def up
+    remove_column :creditcards, :number
+    remove_column :creditcards, :verification_value
+  end
+
+  def down
+    add_column :creditcards, :verification_value, :text
+    add_column :creditcards, :number, :text
+  end
+end

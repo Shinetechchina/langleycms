@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
-gem 'rack', '1.4.1'
+gem 'rails', '3.2.13'
+gem 'rack', '~> 1.4.5'
 gem 'sqlite3'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
@@ -53,6 +53,5 @@ gem 'refinerycms-blog'
 gem 'refinerycms-articles', :path => 'vendor/extensions'
 gem 'refinerycms-stores', :git => 'git@github.com:marshluca/refinerycms-stores.git'
 gem "seed_dump"
-
 
 gem 'pg'
