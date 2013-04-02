@@ -51,9 +51,7 @@ gem 'refinerycms-i18n',   '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 gem 'refinerycms-blog'
 gem 'refinerycms-articles', :path => 'vendor/extensions'
-# gem 'refinerycms-stores', :git => 'git@github.com:marshluca/refinerycms-stores.git'
-gem 'refinerycms-stores', :git => 'git@github.com:marshluca/refinerycms-stores.git', :tag => 'v0.1.1'
+gem 'refinerycms-stores', :git => 'git@github.com:marshluca/refinerycms-stores.git'
 gem "seed_dump"
-
 
 gem 'pg'
